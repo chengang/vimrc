@@ -6,3 +6,5 @@ function ff { osascript -e 'tell application "Finder"'\
  -e 'end if' -e 'end tell'; };\
 
 function cdff { pushd "`ff $@`"; };
+function ackf { ack --cpp --match "$1\b\s*\(" --not "^\s*//" --not "\;" };
+function ackc { ack --cpp --match "\s*class.+$1\b" --not "^\s*//" };
